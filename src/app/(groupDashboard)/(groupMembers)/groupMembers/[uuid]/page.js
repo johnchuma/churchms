@@ -1,12 +1,13 @@
 "use client"
 import { useContext, useEffect, useState } from "react";
-import { deleteDesease, deleteMember, getMembers } from "@/app/controllers/members_controller";
+import { deleteDesease, deleteMember, editMember, getMembers } from "@/app/controllers/members_controller";
 import {timeAgo} from "@/app/utils/time_ago"
 import Link from "next/link";
 import PageLoader from '@/app/components/pageLoader'
 import {toast} from 'react-hot-toast'
-import { LoaderContext } from "@/app/(dashboard)/layout";
-const Page = () => {
+import { LoaderContext } from "@/app/(groupDashboard)/layout";
+import Breadcrumb from "@/app/components/breadcrumb";
+const Page = ({params}) => {
     const [members,setMembers] = useState([])
     const [refresh,setrefresh] = useState(0)
     const {loading,setLoading} = useContext(LoaderContext)
@@ -26,13 +27,14 @@ const Page = () => {
        })
     },[refresh])
     return ( <div>
+            <Breadcrumb prevPage="Groups" />
      
-        <div className="flex justify-between items-start  ">
+        <div className="flex justify-between items-start mt-5  ">
+
             <div className="flex flex-col">
             <h1 className='text-2xl font-bold text-slate-900'>Members</h1>
-            <div className="grid grid-cols-7 text-center  mt-5">
-            {[`All members`,'Children','Adults','Male',"Female",
-            'Widows',"Babtised"].map((item,key)=>
+            <div className="grid grid-cols-2 gap-8 text-center  mt-5">
+            {[`Members`,'Add member'].map((item,key)=>
             <p key={key} onClick={()=>{
                 setselectedItem(key)
             }} className={` font-medium text-base cursor-pointer py-2
@@ -54,7 +56,7 @@ const Page = () => {
                 }} placeholder="Search here"/>
              </div>
              <div className="overflow-x-auto">
-             <table className="min-w-full  ">
+            {selectedItem==0&&<table className="min-w-full  ">
                  <thead className="font-medium border-b border-slate-200 py-3 ">
                      <th className="text-start py-2 text-sm text-slate-900 font-medium">Created</th>
                      <th className="text-start py-2 text-sm text-slate-900 font-medium">Name</th>
@@ -65,13 +67,13 @@ const Page = () => {
                      <th className="text-start py-2 text-sm text-slate-900 font-medium"></th>
                  </thead>
                  <tbody className="space-y-2">
-                    {members.filter((item)=>`${item.name}`.toLowerCase().includes(keyword.toLowerCase())).filter((item, index) => index + 1 > ((currentPage - 1) * itemsPerPage) && index + 1 <= (currentPage*itemsPerPage))
+                    {members.filter((item)=>item.groups.includes[params.uuid]).filter((item)=>`${item.name}`.toLowerCase().includes(keyword.toLowerCase())).filter((item, index) => index + 1 > ((currentPage - 1) * itemsPerPage) && index + 1 <= (currentPage*itemsPerPage))
                     .map((item,key)=>{
                      return <tr className="" key={key}>
                      <td className="py-2 text-sm">{timeAgo(item.createdAt.toDate())}</td>
                      <td className="py-2 text-sm">{item.name}</td>
                      <td className="py-2 text-sm">{item.gender}</td>
-                     <td className="py-2 text-sm">{item.address}</td>
+                     <td className="py-2 text-sm">{item.address}{item.groups.length}</td>
                      <td className="py-2 text-sm">{item.phone}</td>
                      <td  className=" text-indigo-600 bg-opacity-20  font-bold">
                          <Link href={`/editMember/${item.id}`}>
@@ -97,7 +99,55 @@ const Page = () => {
                     })}
  
                  </tbody>
-             </table>
+             </table>}
+             {selectedItem==1&&<table className="min-w-full  ">
+                 <thead className="font-medium border-b border-slate-200 py-3 ">
+                     <th className="text-start py-2 text-sm text-slate-900 font-medium">Created</th>
+                     <th className="text-start py-2 text-sm text-slate-900 font-medium">Name</th>
+                     <th className="text-start py-2 text-sm text-slate-900 font-medium">Gender</th>
+                     <th className="text-start py-2 text-sm text-slate-900 font-medium">Address</th>
+                     <th className="text-start py-2 text-sm text-slate-900 font-medium">Phone number</th>               
+                     <th className="text-start py-2 text-sm text-slate-900 font-medium"></th>
+                     <th className="text-start py-2 text-sm text-slate-900 font-medium"></th>
+                 </thead>
+                 <tbody className="space-y-2">
+                    {members.filter((item)=>`${item.name}`.toLowerCase().includes(keyword.toLowerCase())).filter((item, index) => index + 1 > ((currentPage - 1) * itemsPerPage) && index + 1 <= (currentPage*itemsPerPage))
+                    .map((item,key)=>{
+                     return <tr className="" key={key}>
+                     <td className="py-2 text-sm">{timeAgo(item.createdAt.toDate())}</td>
+                     <td className="py-2 text-sm">{item.name}</td>
+                     <td className="py-2 text-sm">{item.gender}</td>
+                     <td className="py-2 text-sm">{item.address}</td>
+                     <td className="py-2 text-sm">{item.phone}</td>
+                     <td  className=" bg-opacity-20  font-bold">
+                      
+                         <svg onClick={()=>{
+                           setLoading(true)
+                            let groups = item.groups??[];
+                            let payload = {
+                                groups:[...groups,params.uuid]
+                            }
+                           editMember(item.id,payload).then((data)=>{
+                           setrefresh(refresh+1)
+                           setLoading(false)
+                           toast.success("member is added successfully")
+                           })
+                         }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} 
+                         stroke="currentColor" className="w-5 h-5 text-green-600">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+                        </svg>
+
+                    
+                     </td>
+                     <td  className=" text-danger bg-opacity-20 font-bold">
+                       
+                     </td>
+                     </tr>
+                    })}
+ 
+                 </tbody>
+             </table>}
+             
              <div className="flex justify-between mt-4 text-sm">
                 <div>{currentPage} of {totalPages} pages</div>
                 <div className="flex space-x-3">
@@ -116,7 +166,6 @@ const Page = () => {
 
              </div>
              </div>
-             
          </div>
         }
         

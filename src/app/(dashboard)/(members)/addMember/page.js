@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 
 import { useState,useContext } from "react";
 import { LoaderContext } from "../../layout";
+import toast from "react-hot-toast";
 
 
 const Page = () => {
@@ -29,27 +30,29 @@ const Page = () => {
             work :  e.target.work.value,
             disability :  e.target.disability.value,
             birthDate :  e.target.birthDate.value,
+            groups:[],
             email: "",
             deviceId:"",
           }
-          addMember(data).then((data)=>{
-          setLoading(false)
+          addMember(data).then((dat)=>{
+            toast.success("Added successfully")
+            setLoading(false)
             router.back()
           })
         }}>
             <h1 className="text-2xl font-bold text-slate-800 mb-4">New church member</h1>
             <div className="grid grid-cols-1 gap-4">
                 <FormGroup label="Member name" 
-                inputField={<input name="name" className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="name" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter member name" />}/>
                <FormGroup label="Phone number" 
-                inputField={<input name="phone" type="number" className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="phone" required type="number" className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter phone number" />}/>
                <FormGroup label="Address" 
-                inputField={<input name="address" className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="address" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter member address" />}/>
                 <FormGroup label="Birth date" 
-                inputField={<input name="birthdate" type="date"
+                inputField={<input name="birthDate" type="date"
                 className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter birth date" />}/>
                <FormGroup label="Gender" 

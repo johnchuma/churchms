@@ -9,8 +9,20 @@
 }
 @font-face {
   font-family: "Amble";
+  font-weight: 400;
   src: url("../../public/fonts/amble/Amble-Regular.ttf");
 }
+@font-face {
+  font-family: "Amble";
+  font-weight: 800;
+  src: url("../../public/fonts/amble/Amble-Bold.ttf");
+}
+@font-face {
+  font-family: "Amble";
+  font-weight: 200;
+  src: url("../../public/fonts/amble/Amble-Light.ttf");
+}
+
 @font-face {
   font-family: "Fira Sans";
   src: url("../../public/fonts/fira-sans/FiraSans-Medium.otf");

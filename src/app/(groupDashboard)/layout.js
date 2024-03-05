@@ -2,6 +2,7 @@
 import { createContext, useState } from "react";
 import Header from "../components/header";
 import Sidebar from "../components/sidebar";
+import GroupSidebar from "../components/group_sidebar";
 export const LoaderContext = createContext()
 const Layout = ({children}) => {
   const [loading,setLoading] = useState(false)
@@ -12,7 +13,7 @@ const Layout = ({children}) => {
   </div>}
       <Header/>
       <div className="grid grid-cols-11 overflow-x-hidden">
-        <Sidebar/>
+        <GroupSidebar/>
         <div className=" bg-white h-screen col-span-9 py-8 px-12">
           <LoaderContext.Provider value={{loading,setLoading}}>
               {children}
