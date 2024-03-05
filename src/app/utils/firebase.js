@@ -6,13 +6,13 @@ import {getAuth} from "firebase/auth";
 import {getFirestore} from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDrOSXJSWPAjhZhzJIczNyK86-VPG5OdfE",
-  authDomain: "ndajili-pharmacy.firebaseapp.com",
-  projectId: "ndajili-pharmacy",
-  storageBucket: "ndajili-pharmacy.appspot.com",
-  messagingSenderId: "39175149675",
-  appId: "1:39175149675:web:4cb6bb19b44d69a855792e",
-  measurementId: "G-D7036SFR1D"
+  apiKey: "AIzaSyBuMgtsYPMhO4eIh4Y-P9y2B2xVQ_aV6j4",
+  authDomain: "mordenchurchms.firebaseapp.com",
+  projectId: "mordenchurchms",
+  storageBucket: "mordenchurchms.appspot.com",
+  messagingSenderId: "1063690596266",
+  appId: "1:1063690596266:web:c60b69e58e940b726105d3",
+  measurementId: "G-TH1L19CELV"
 };
 
 

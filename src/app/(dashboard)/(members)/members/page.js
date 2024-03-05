@@ -28,15 +28,15 @@ const Page = () => {
      
         <div className="flex justify-between items-start  ">
             <div className="flex flex-col">
-            <h1 className='text-2xl font-bold text-black'>Members</h1>
-            <div className="grid grid-cols-8 text-center  mt-5 ">
+            <h1 className='text-2xl font-bold text-slate-900'>Members</h1>
+            <div className="grid grid-cols-7 text-center  mt-5 ">
             {[`All members`,'Children','Adults','Male',"Female",
             'Widows',"Babtised"].map((item,key)=>
             <p key={key} onClick={()=>{
                 setselectedItem(key)
             }} className={`font-semibold text-lg cursor-pointer  py-2
              ${selectedItem==key?'border-b-2 border-indigo-600 text-slate-900':
-             'text-gray-500'}`}  >{item}</p>)}
+             'text-gray-400'}`}  >{item}</p>)}
            </div>
             </div>
        

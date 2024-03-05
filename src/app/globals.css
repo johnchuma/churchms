@@ -7,7 +7,14 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-
+@font-face {
+  font-family: "Amble";
+  src: url("../../public/fonts/amble/Amble-Regular.ttf");
+}
+@font-face {
+  font-family: "Fira Sans";
+  src: url("../../public/fonts/fira-sans/FiraSans-Medium.otf");
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
