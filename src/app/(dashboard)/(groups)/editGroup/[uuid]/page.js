@@ -22,7 +22,7 @@ const Page = ({params}) => {
       })
     },[])
     return ( group&& <div>
-        <Breadcrumb prevPage="Groups"/>
+        <Breadcrumb prevPage="Groups" link="/groups"/>
         <div className="py-3 mt-3">
         <form onSubmit={(e)=>{
           e.preventDefault();

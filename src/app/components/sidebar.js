@@ -8,7 +8,7 @@ const Sidebar = () => {
         <h1 className="text-sm px-6">FEATURES</h1>
         <div className=" mt-3 flex flex-col space-y-3  text-sm font-medium ">
         {[
-            {title:"Home",href:"/"},
+            {title:"Home",href:"/home"},
             {title:"Members",href:"/members"},
             {title:"Groups",href:"/groups"},
             {title:"Reports",href:"null"},
@@ -18,7 +18,7 @@ const Sidebar = () => {
             {title:"Daily scriptures",href:"null"},
             {title:"Sermons",href:"/sermons"}, 
          ].map((item)=>{
-            return <Link className={`${path == item.href?"bg-indigo-600 text-white py-2 ":"bg-transparent"} pl-10`} href={item.href}>{item.title}</Link>
+            return <Link className={`${path.includes(item.href)?"bg-indigo-600 text-white py-2 ":"bg-transparent"} pl-10`} href={item.href}>{item.title}</Link>
           })}
         </div>
         <h1 className="text-sm px-6 mt-5">ORDERS</h1>

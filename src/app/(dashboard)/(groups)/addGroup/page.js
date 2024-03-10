@@ -14,7 +14,7 @@ const Page = () => {
     const router = useRouter()
     const {loading,setLoading} = useContext(LoaderContext)
     return ( <div>
-        <Breadcrumb prevPage="Groups"/>
+        <Breadcrumb prevPage="Groups" link="/groups"/>
         <div className="py-3 mt-3">
         <form onSubmit={(e)=>{
           e.preventDefault();
