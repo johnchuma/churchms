@@ -33,14 +33,14 @@ const Page = () => {
     
             </div>
        
-        <Link href="/addGroup" className="bg-indigo-600 text-white py-2 px-3 text-sm font-bold rounded-lg">Add group</Link>
+        <Link href="/addGroup" className="bg-indigo-600 text-white py-2 px-3 text-base font-bold rounded-lg">Add group</Link>
         </div>
 
 
         {
              groups&&<div className=" py-0 text-start bg-white">
              <div className="flex justify-end">
-                <input className="border-slate-300 rounded-lg py-1 text-sm "  onChange={(e)=>{
+                <input className="border-slate-300 rounded-lg py-1 text-base "  onChange={(e)=>{
                     setkeyword(e.target.value)
                     keyword.includes
                 }} placeholder="Search here"/>
@@ -48,20 +48,20 @@ const Page = () => {
              <div className="overflow-x-auto">
              <table className="min-w-full  ">
                  <thead className="font-medium border-b border-slate-200 py-3 ">
-                     <th className="text-start py-2 text-sm text-slate-900 font-medium">Created</th>
-                     <th className="text-start py-2 text-sm text-slate-900 font-medium">Name</th>
-                     <th className="text-start py-2 text-sm text-slate-900 font-medium">Type</th>            
-                     <th className="text-start py-2 text-sm text-slate-900 font-medium"></th>
-                     <th className="text-start py-2 text-sm text-slate-900 font-medium"></th>
-                     <th className="text-start py-2 text-sm text-slate-900 font-medium"></th>
+                     <th className="text-start py-2 text-base text-slate-900 font-medium">Created</th>
+                     <th className="text-start py-2 text-base text-slate-900 font-medium">Name</th>
+                     <th className="text-start py-2 text-base text-slate-900 font-medium">Type</th>            
+                     <th className="text-start py-2 text-base text-slate-900 font-medium"></th>
+                     <th className="text-start py-2 text-base text-slate-900 font-medium"></th>
+                     <th className="text-start py-2 text-base text-slate-900 font-medium"></th>
                  </thead>
                  <tbody className="space-y-2">
                     {groups.filter((item)=>`${item.name}`.toLowerCase().includes(keyword.toLowerCase())).filter((item, index) => index + 1 > ((currentPage - 1) * itemsPerPage) && index + 1 <= (currentPage*itemsPerPage))
                     .map((item,key)=>{
                      return <tr className="" key={key}>
-                     <td className="py-2 text-sm">{timeAgo(item.createdAt.toDate())}</td>
-                     <td className="py-2 text-sm">{item.name}</td>
-                     <td className="py-2 text-sm">{item.type}</td>
+                     <td className="py-2 text-base">{timeAgo(item.createdAt.toDate())}</td>
+                     <td className="py-2 text-base">{item.name}</td>
+                     <td className="py-2 text-base">{item.type}</td>
                      <td  className=" bg-opacity-20  font-bold">
                          <Link href={`/groupMembers/${item.id}`}>
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" 
@@ -98,7 +98,7 @@ const Page = () => {
  
                  </tbody>
              </table>
-             <div className="flex justify-between mt-4 text-sm">
+             <div className="flex justify-between mt-4 text-base">
                 <div>{currentPage} of {totalPages} pages</div>
                 <div className="flex space-x-3">
                     <button onClick={()=>{

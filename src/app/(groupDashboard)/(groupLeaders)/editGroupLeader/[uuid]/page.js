@@ -52,12 +52,12 @@ const Page = ({params}) => {
             <div className="grid grid-cols-1 gap-4">
               
                 <FormGroup label="Leadership position" 
-                inputField={<input defaultValue={leader.leadership} name="leadership"  required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input defaultValue={leader.leadership} name="leadership"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter leadership position" />}/>
                
              
             </div>
-            <button type="submit"  className="bg-indigo-600 text-sm justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
+            <button type="submit"  className="bg-indigo-600 text-base justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
               Edit leader
             </button>
         </form>

@@ -35,16 +35,16 @@ const Page = ({params}) => {
             <h1 className="text-2xl font-bold text-slate-800 mb-4">Add event</h1>
             <div className="grid grid-cols-1 gap-4">
                 <FormGroup label="Event title" 
-                inputField={<input name="title"  required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="title"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter event title" />}/>
                  <FormGroup label="Event date" 
-                inputField={<input type="date" name="date"  required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input type="date" name="date"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 />}/>
                 <FormGroup label="Event description" 
-                inputField={<textarea name="description"  required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<textarea name="description"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter event description" />}/>
             </div>
-            <button type="submit"  className="bg-indigo-600 text-sm justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
+            <button type="submit"  className="bg-indigo-600 text-base justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
               Add event
             </button>
         </form>

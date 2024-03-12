@@ -32,16 +32,16 @@ const Page = () => {
             <h1 className="text-2xl font-bold text-slate-800 mb-4">New church group</h1>
             <div className="grid grid-cols-1 gap-4">
                 <FormGroup label="Group name" 
-                inputField={<input name="name" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="name" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter group name" />}/>
                <FormGroup label="Group type" 
-                inputField={<select name="type" className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<select name="type" className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                >
                     <option value="Others">Others</option>
                     <option value="Main">Main</option>
                 </select>}/>
             </div>
-            <button type="submit"  className="bg-indigo-600 text-sm justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
+            <button type="submit"  className="bg-indigo-600 text-base justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
               Add group
             </button>
         </form>

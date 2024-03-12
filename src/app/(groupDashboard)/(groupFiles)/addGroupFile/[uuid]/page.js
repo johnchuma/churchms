@@ -55,7 +55,7 @@ const Page = ({params}) => {
             <FormGroup label="File type" 
                 inputField={<select onChange={(e)=>{
                      setSelectedType(e.target.value)
-                }} name="type"   required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg">
+                }} name="type"   required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg">
                     <option value="Image">Image</option>
                     <option value="Video">Video</option>
                     <option value="Audio">Audio</option>
@@ -63,18 +63,18 @@ const Page = ({params}) => {
                 </select>}/>
                 {selectedType == "Image" &&
                 <FormGroup label="Pick file" 
-                inputField={<input name="file" type="file"  required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="file" type="file"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                  />}/>
                 }
                   {selectedType == "Document" &&
                 <FormGroup label="Pick file" 
-                inputField={<input name="file" type="file"  required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="file" type="file"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                  />}/>
                 }
                   {selectedType == "Video" &&
                   <div className="space-y-4">
                     <FormGroup label="Video link" 
-                inputField={<input name="link" placeholder="Enter video link"   required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="link" placeholder="Enter video link"   required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                  />}/>
               
                   </div>
@@ -83,21 +83,21 @@ const Page = ({params}) => {
                 
                 {selectedType == "Audio" &&<div className="space-y-4">
                 <FormGroup label="Audio link" 
-                inputField={<input name="link" placeholder="Enter audio link"   required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="link" placeholder="Enter audio link"   required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                  />}/>
                
                 </div>
                 
                 }
                  <FormGroup label="Title" 
-                inputField={<input name="title" placeholder="Enter title"   required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="title" placeholder="Enter title"   required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                  />}/>
                  <FormGroup label="Description" 
-                inputField={<textarea name="description" placeholder="Enter description"   required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<textarea name="description" placeholder="Enter description"   required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                  />}/>
              
             </div>
-            <button type="submit"  className="bg-indigo-600 text-sm justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
+            <button type="submit"  className="bg-indigo-600 text-base justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
               Add file
             </button>
         </form>

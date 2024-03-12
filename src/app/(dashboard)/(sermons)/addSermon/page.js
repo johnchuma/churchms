@@ -71,37 +71,37 @@ const Page = () => {
                     inputField={
                     <select onChange={(e)=>{
                         setSelectedType(e.target.value)
-                    }} name="type" className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg" >
+                    }} name="type" className="border text-base w-3/5 py-1  border-slate-300 rounded-lg" >
                     <option value="Video">Video</option>
                     <option value="Text">Text</option>
                     <option value="Audio">Audio</option>
                     <option value="Document">Document</option>
                 </select>}/>
                 <FormGroup label="Sermon title" 
-                inputField={<input name="title" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="title" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Write sermon title" />}/>
                  <FormGroup label="Sermon scriptures" 
-                inputField={<input name="scriptures"  required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="scriptures"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Write sermon scriptures" />}/>
                  <FormGroup label="Introduction" 
-                inputField={<textarea name="introduction" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<textarea name="introduction" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Write short introduction here" />}/>
                 {
                     selectedType == "Text"&&<div className="space-y-4">
                         <FormGroup label="First paragraph" 
-                inputField={<textarea name="paragraph1" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<textarea name="paragraph1" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Write paragraph here" />}/>
                  <FormGroup label="Second paragraph" 
-                inputField={<textarea name="paragraph2" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<textarea name="paragraph2" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Write paragraph here" />}/>
                  <FormGroup label="Third paragraph" 
-                inputField={<textarea name="paragraph3" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<textarea name="paragraph3" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Write paragraph here" />}/>
                  <FormGroup label="Fourth paragraph" 
-                inputField={<textarea name="paragraph4" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<textarea name="paragraph4" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Write paragraph here" />}/>
                  <FormGroup label="Conclusion" 
-                inputField={<textarea name="conclusion" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<textarea name="conclusion" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Write conclusion" />}/>
                 
                     </div>  
@@ -109,27 +109,27 @@ const Page = () => {
                   {
                     selectedType == "Video" &&<div className="space-y-4">
                             <FormGroup label="Link" 
-                            inputField={<input name="link" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                            inputField={<input name="link" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                             placeholder="Paste link here" />}/>
                     </div>  
                 }
                  {
                     selectedType == "Audio"  &&<div className="space-y-4">
                             <FormGroup label="Link" 
-                            inputField={<input name="link" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                            inputField={<input name="link" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                             placeholder="Paste link here" />}/>
                     </div>  
                 }
               {
                     selectedType == "Document"&&<div>
                         <FormGroup label="Upload file" 
-                            inputField={<input name="document" type="file" required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                            inputField={<input name="document" type="file" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                             placeholder="" />}/>
                     </div>
                 }
            
             </div>
-            <button type="submit"  className="bg-indigo-600 text-sm justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
+            <button type="submit"  className="bg-indigo-600 text-base justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
               Add sermon
             </button>
         </form>

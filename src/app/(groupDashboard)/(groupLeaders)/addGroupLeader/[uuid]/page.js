@@ -44,17 +44,17 @@ const Page = ({params}) => {
                 inputField={<select onChange={(e)=>{
                   
                       setSeletedMember(members[e.target.value])
-                }} name="userId"   required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                }} name="userId"   required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 >   <option>Select member</option>
                     {members.map((item,index)=><option key={item.id} value={index}>{item.name}</option>)}
                 </select>}/>
                 <FormGroup label="Leadership position" 
-                inputField={<input name="leadership"  required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="leadership"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter leadership position" />}/>
                
              
             </div>
-            <button type="submit"  className="bg-indigo-600 text-sm justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
+            <button type="submit"  className="bg-indigo-600 text-base justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
               Add leader
             </button>
         </form>

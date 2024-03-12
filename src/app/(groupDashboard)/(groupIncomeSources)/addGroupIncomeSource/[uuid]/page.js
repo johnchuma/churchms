@@ -37,21 +37,21 @@ const Page = ({params}) => {
             <h1 className="text-2xl font-bold text-slate-800 mb-4">Add source of income</h1>
             <div className="grid grid-cols-1 gap-4">
                 <FormGroup label="Income source name" 
-                inputField={<input name="name"  required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="name"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter source name" />}/>
                 <FormGroup label="It records user info ?" 
-                inputField={<select name="recordUserInfo" className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<select name="recordUserInfo" className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 >   <option value={false}>No</option>
                     <option value={true}>Yes</option>
                 </select>}/>
                <FormGroup label="It allows pledging ?" 
-                inputField={<select name="allowPledging" className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<select name="allowPledging" className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 >   <option value={false}>No</option>
                     <option value={true}>Yes</option>
                 </select>}/>
              
             </div>
-            <button type="submit"  className="bg-indigo-600 text-sm justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
+            <button type="submit"  className="bg-indigo-600 text-base justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
               Add income source
             </button>
         </form>

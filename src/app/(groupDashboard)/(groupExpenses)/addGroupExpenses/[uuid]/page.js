@@ -35,15 +35,15 @@ const Page = ({params}) => {
             <h1 className="text-2xl font-bold text-slate-800 mb-4">Add expense</h1>
             <div className="grid grid-cols-1 gap-4">
                 <FormGroup label="Amount used" 
-                inputField={<input name="amount" type="number"  required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="amount" type="number"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter amount used" />}/>
                 <FormGroup label="What for ?" 
-                inputField={<textarea name="description"  required className="border text-sm w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<textarea name="description"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Enter expense description" />}/>
                
              
             </div>
-            <button type="submit"  className="bg-indigo-600 text-sm justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
+            <button type="submit"  className="bg-indigo-600 text-base justify-center flex py-2 px-3  mt-8 rounded-lg text-white">
               Add expense
             </button>
         </form>

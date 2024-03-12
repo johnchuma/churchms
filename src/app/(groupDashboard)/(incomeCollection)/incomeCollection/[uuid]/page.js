@@ -45,14 +45,14 @@ const Page = ({params}) => {
             <h1 className='text-2xl font-bold text-slate-900'>{incomeSource&&incomeSource.name}</h1>
             </div>
             <Link href={`/recordIncome/${params.uuid}`} className="bg-indigo-600 text-white
-             py-2 px-3 text-sm font-bold rounded-lg">{incomeSource.allowPledging?"Record pledge":"Record income"}</Link>
+             py-2 px-3 text-base font-bold rounded-lg">{incomeSource.allowPledging?"Record pledge":"Record income"}</Link>
         </div>
         
 
         {
              incomecollections&&<div className=" py-0 text-start bg-white mt-4">
              <div className="flex justify-end">
-                <input className="border-slate-300 rounded-lg py-1 text-sm "  onChange={(e)=>{
+                <input className="border-slate-300 rounded-lg py-1 text-base "  onChange={(e)=>{
                     setkeyword(e.target.value)
                     keyword.includes
                 }} placeholder="Search here"/>
@@ -60,25 +60,25 @@ const Page = ({params}) => {
              <div className="overflow-x-auto">
             {<table className="min-w-full  ">
                  <thead className="font-medium border-b border-slate-200 py-3 ">
-                     <th className="text-start py-2 text-sm text-slate-900 font-medium">Recorded</th>
-                     <th className="text-start py-2 text-sm text-slate-900 font-medium">Amount</th>
-                     {incomeSource.recordUserInfo == true && <th className="text-start py-2 text-sm text-slate-900 font-medium">Paid by</th>}              
-                     {incomeSource.recordUserInfo == true && <th className="text-start py-2 text-sm text-slate-900 font-medium">Phone number</th>}              
-                     {incomeSource.recordUserInfo == true && <th className="text-start py-2 text-sm text-slate-900 font-medium">Address</th>}
-                     <th className="text-start py-2 text-sm text-slate-900 font-medium"></th>
-                     <th className="text-start py-2 text-sm text-slate-900 font-medium"></th>
-                     <th className="text-start py-2 text-sm text-slate-900 font-medium"></th>
+                     <th className="text-start py-2 text-base text-slate-900 font-medium">Recorded</th>
+                     <th className="text-start py-2 text-base text-slate-900 font-medium">Amount</th>
+                     {incomeSource.recordUserInfo == true && <th className="text-start py-2 text-base text-slate-900 font-medium">Paid by</th>}              
+                     {incomeSource.recordUserInfo == true && <th className="text-start py-2 text-base text-slate-900 font-medium">Phone number</th>}              
+                     {incomeSource.recordUserInfo == true && <th className="text-start py-2 text-base text-slate-900 font-medium">Address</th>}
+                     <th className="text-start py-2 text-base text-slate-900 font-medium"></th>
+                     <th className="text-start py-2 text-base text-slate-900 font-medium"></th>
+                     <th className="text-start py-2 text-base text-slate-900 font-medium"></th>
 
                  </thead>
                  <tbody className="space-y-2">
                     {incomecollections.filter((item)=>`${item.name}`.toLowerCase().includes(keyword.toLowerCase())).filter((item, index) => index + 1 > ((currentPage - 1) * itemsPerPage) && index + 1 <= (currentPage*itemsPerPage))
                     .map((item,key)=>{
                      return <tr className="" key={key}>
-                     <td className="py-2 text-sm">{formatDate(item.createdAt)}</td>
-                     <td className="py-2 text-sm">{item.amount}TSH</td>
-                     {incomeSource.recordUserInfo == true && <td className="py-2 text-sm">{item.name}</td>}
-                     {incomeSource.recordUserInfo == true && <td className="py-2 text-sm">{item.phone}</td>}
-                     {incomeSource.recordUserInfo == true && <td className="py-2 text-sm">{item.address}</td>}
+                     <td className="py-2 text-base">{formatDate(item.createdAt)}</td>
+                     <td className="py-2 text-base">{item.amount}TSH</td>
+                     {incomeSource.recordUserInfo == true && <td className="py-2 text-base">{item.name}</td>}
+                     {incomeSource.recordUserInfo == true && <td className="py-2 text-base">{item.phone}</td>}
+                     {incomeSource.recordUserInfo == true && <td className="py-2 text-base">{item.address}</td>}
                      {incomeSource.allowPledging == true && <td className="font-bold cursor-pointer text-cyan-500">
                         <Link href={`/pledgePayouts/${item.id}`}>View payouts</Link></td> }
                      
@@ -109,7 +109,7 @@ const Page = ({params}) => {
              </table>}
             
              
-             <div className="flex justify-between mt-4 text-sm">
+             <div className="flex justify-between mt-4 text-base">
                 <div>{currentPage} of {totalPages} pages</div>
                 <div className="flex space-x-3">
                     <button onClick={()=>{
