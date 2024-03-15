@@ -2,48 +2,45 @@
 import { useContext, useEffect, useState } from "react";
 import {timeAgo} from "@/app/utils/time_ago"
 import Link from "next/link";
-import PageLoader from '@/app/components/pageLoader'
 import {toast} from 'react-hot-toast'
-import { LoaderContext } from "@/app/(groupDashboard)/layout";
+import { LoaderContext } from "@/app/(dashboard)/layout";
 import Breadcrumb from "@/app/components/breadcrumb";
-import { getGroup } from "@/app/controllers/groups_controller";
-import { deleteSourceOfIncome, getSourceOfIncomes } from "@/app/controllers/source_of_income_controller";
+import { deleteBlog, getBlog, getBlogs } from "@/app/controllers/blogs_controller";
+
 const Page = ({params}) => {
+    const [blogs,setBlogs] = useState([])
     const [refresh,setrefresh] = useState(0)
-    const {loading,setLoading,group,setGroup} = useContext(LoaderContext)
+    const {loading,setLoading} = useContext(LoaderContext)
     const [keyword, setkeyword] = useState('');
-   const itemsPerPage  = 7;
+    const itemsPerPage  = 7;
     const [currentPage, setcurrentPage] = useState(1);
     const [totalPages, settotalPages] = useState(0);
-    const [selectedItem,setselectedItem] = useState(0)
-    const [sourceofincomes,setSourceOfIncomes] = useState([])
 
     useEffect(()=>{
-        setLoading(true)
-       getSourceOfIncomes(params.uuid).then((data)=>{
-        setSourceOfIncomes(data)
-        settotalPages(Math.ceil(data.length/itemsPerPage))
-        setLoading(false)
-
+       setLoading(true)
+       getBlogs().then((data)=>{
+            setBlogs(data)
+            settotalPages(Math.ceil(data.length/itemsPerPage))
+            setLoading(false)
        })
     },[refresh])
-    useEffect(() => {
-        getGroup(params.uuid).then((data)=>setGroup(data))
-        }, []);
+
+
+
     return ( <div>
-            <Breadcrumb prevPage="Groups" link="/groups" />
+   
      
         <div className="flex justify-between items-start mt-5  ">
             <div className="flex flex-col">
-            <h1 className='text-2xl font-bold text-slate-900'>Income sources of {group&&group.name}</h1>
+            <h1 className='text-2xl font-bold text-slate-900'>Blogs</h1>
             </div>
-            <Link href={`/addGroupIncomeSource/${params.uuid}`} className="bg-indigo-600 text-white
-             py-2 px-3 text-base font-bold rounded-lg">Add income source</Link>
+            <Link href={`/addBlog/${params.uuid}`} className="bg-indigo-600 text-white
+             py-2 px-3 text-base font-bold rounded-lg">Add blog</Link>
         </div>
         
 
         {
-             sourceofincomes&&<div className=" py-0 text-start bg-white mt-4">
+             blogs&&<div className=" py-0 text-start bg-white mt-4">
              <div className="flex justify-end">
                 <input className="border-slate-300 rounded-lg py-1 text-base "  onChange={(e)=>{
                     setkeyword(e.target.value)
@@ -54,29 +51,20 @@ const Page = ({params}) => {
             {<table className="min-w-full  ">
                  <thead className="font-medium border-b border-slate-200 py-3 ">
                      <th className="text-start py-2 text-base text-slate-900 font-medium">Created</th>
-                     <th className="text-start py-2 text-base text-slate-900 font-medium">Name</th>             
-                     <th className="text-start py-2 text-base text-slate-900 font-medium"></th>
+                     <th className="text-start py-2 text-base text-slate-900 font-medium">Title</th>
+                     <th className="text-start py-2 text-base text-slate-900 font-medium">Description</th>             
                      <th className="text-start py-2 text-base text-slate-900 font-medium"></th>
                      <th className="text-start py-2 text-base text-slate-900 font-medium"></th>
                  </thead>
                  <tbody className="space-y-2">
-                    {sourceofincomes.filter((item)=>`${item.name}`.toLowerCase().includes(keyword.toLowerCase())).filter((item, index) => index + 1 > ((currentPage - 1) * itemsPerPage) && index + 1 <= (currentPage*itemsPerPage))
+                    {blogs.filter((item)=>`${item.name}`.toLowerCase().includes(keyword.toLowerCase())).filter((item, index) => index + 1 > ((currentPage - 1) * itemsPerPage) && index + 1 <= (currentPage*itemsPerPage))
                     .map((item,key)=>{
                      return <tr className="" key={key}>
                      <td className="py-2 text-base">{timeAgo(item.createdAt.toDate())}</td>
-                     <td className="py-2 text-base">{item.name}</td>
-                     <td  className="  bg-opacity-20  font-bold">
-                         <Link href={`/incomeCollection/${item.id}`}>
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                          viewBox="0 0 24 24" strokeWidth={1.5} 
-                           stroke="currentColor" className="w-5 h-5 text-slate-800 cursor-pointer">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            </svg>
-                         </Link>
-                     </td>
+                     <td className="py-2 text-base">{item.title}</td>
+                     <td className="py-2 text-base">{item.description}</td>
                      <td  className=" text-indigo-600 bg-opacity-20  font-bold">
-                         <Link href={`/editGroupIncomeSource/${item.id}`}>
+                         <Link href={`/editBlog/${item.id}`}>
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
                           className="w-5 h-5 text-green-600">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
@@ -85,7 +73,7 @@ const Page = ({params}) => {
                      </td>
                      <td  className=" text-danger bg-opacity-20 font-bold">
                          <div className="cursor-pointer" onClick={()=>{
-                            deleteSourceOfIncome(item.id).then((data)=>{
+                            deleteBlog(item.id).then((data)=>{
                                  setrefresh(refresh+1)
                                  toast.success('Deleted successfully')
                             })

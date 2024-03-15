@@ -27,6 +27,18 @@ export const getSourceOfIncomes = async (uuid) => {
 
     }
 }
+
+export const getAllSourceOfIncome = async () => {
+    try {
+        const ref = collection(firestore, "sourceofincomes")
+        const qr = query(ref,orderBy("createdAt",'desc'))
+        const response = await getDocs(qr)
+        return response.docs.map((item) => item.data());
+    } catch (error) {
+        throw error
+
+    }
+}
 export const getSourceOfIncome= async (id) => {
     try {
         const response = await getDoc(doc(firestore,"sourceofincomes",id))

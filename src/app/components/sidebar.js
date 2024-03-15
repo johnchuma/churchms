@@ -11,11 +11,11 @@ const Sidebar = () => {
             {title:"Home",href:"/home"},
             {title:"Members",href:"/members"},
             {title:"Groups",href:"/groups"},
-            {title:"Reports",href:"null"},
-            {title:"Calender",href:"/calender"},
-            {title:"Blog",href:"null"},
-            {title:"Anouncements",href:"null"} ,
-            {title:"Daily scriptures",href:"null"},
+            {title:"Projects",href:"/projects"},
+            {title:"Calender",href:"/calenders"},
+            {title:"Blog",href:"/blogs"},
+            {title:"Announcements",href:"/announcements"} ,
+            {title:"Daily scriptures",href:"/scriptures"},
             {title:"Sermons",href:"/sermons"}, 
          ].map((item)=>{
             return <Link className={`${path.includes(item.href)?"bg-indigo-600 text-white py-2 ":"bg-transparent"} pl-10`} href={item.href}>{item.title}</Link>
@@ -27,8 +27,7 @@ const Sidebar = () => {
             {title:"Social banners/posters",href:"/WES"},
             {title:"Musicians & engineers",href:"null"},
             {title:"Instruments",href:"/grou"},
-            {title:"Decorations",href:"null"},
-           
+            {title:"Decorations",href:"null"}
          ].map((item)=>{
             return <Link className={`${path == item.href?"bg-indigo-600 text-white py-2 ":"bg-transparent"} pl-10`} href={item.href}>{item.title}</Link>
           })}

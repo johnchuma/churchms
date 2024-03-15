@@ -5,6 +5,7 @@ import { LoaderContext } from "@/app/(groupDashboard)/layout";
 import Breadcrumb from "@/app/components/breadcrumb";
 import { getGroup } from "@/app/controllers/groups_controller";
 import FormGroup from "@/app/components/formGroup";
+import { sendSMS, sendSms } from "@/app/controllers/sms_controller";
 const Page = ({params}) => {
     const [members,setMembers] = useState([])
     const [refresh,setrefresh] = useState(0)
@@ -30,10 +31,18 @@ const Page = ({params}) => {
     return ( <div>
             <Breadcrumb prevPage="Groups" link="/groups" />
      
-        <form className="space-y-4 py-3">
+        <form onSubmit={(e)=>{
+            e.preventDefault()
+            setLoading(true)
+            sendSMS({message:e.target.message.value,
+                number:selectedType=="number"&&e.target.number.value,
+                uuid:selectedType=="all"&&params.uuid}).then((data)=>{
+                setLoading(false)
+            })
+        }} className="space-y-4 py-3">
         <h1 className="text-2xl font-bold text-slate-800 mb-4">Send message</h1>
         <FormGroup label="Select type" 
-                inputField={<select name="number" onChange={(e)=>{
+                inputField={<select name="type" onChange={(e)=>{
                     setselectedType(e.target.value)
                 }} required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Type number here" >
@@ -42,7 +51,7 @@ const Page = ({params}) => {
                     <option value="all">All members of {group&&group.name}</option>
                 </select>}/>
                 {selectedType == "number" && <FormGroup label="Recepient number" 
-                inputField={<input name="name" type="number"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
+                inputField={<input name="number" type="number"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"
                 placeholder="Type number here" />}/>}
         <FormGroup label="Compose message" 
                 inputField={<textarea name="message"  required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"

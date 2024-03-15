@@ -9,13 +9,15 @@ import { useState,useContext, useEffect } from "react";
 import { LoaderContext } from "@/app/(groupDashboard)/layout";
 import toast from "react-hot-toast";
 import { addSourceOfIncome } from "@/app/controllers/source_of_income_controller";
+import { getGroup } from "@/app/controllers/groups_controller";
 
 
 const Page = ({params}) => {
     const router = useRouter()
-    const {loading,setLoading} = useContext(LoaderContext)
-
-   
+    const {loading,setLoading,group,setGroup} = useContext(LoaderContext)
+    useEffect(() => {
+      getGroup(params.uuid).then((data)=>setGroup(data))
+      }, []);
     return ( <div>
         <Breadcrumb prevPage="Income sources"/>
         <div className="py-3 mt-3">
@@ -25,6 +27,7 @@ const Page = ({params}) => {
           const data = {
             groupId :  params.uuid,
             name :  e.target.name.value,
+            groupName:group.name,
             allowPledging :   e.target.allowPledging.value=="true"?true:false,
             recordUserInfo:  e.target.recordUserInfo.value=="true"?true:false
           }
