@@ -3,14 +3,14 @@ const PricingSection = () => {
         
         <div className="   py-24 w-10/12 mx-auto  ">
             <div className="text-center mb-10">
-            <h1 className="font-bold w-12/12 text-4xl text-white  me-auto">
+            <h1 className="font-bold w-12/12 mb-3 text-4xl text-white  me-auto">
            Our subscriptions plans
                   </h1>
                   <p className="pe-5 text-lg text-white">
                     We have a very offordable plans 
                   </p>
             </div>
-          <div className="grid grid-cols-3 gap-24 text-lg">
+          <div className="grid grid-cols-3 gap-8 text-lg">
              <div className=" bg-white px-6 py-6 rounded-2xl ">
                 <h1 className="text-2xl font-bold text-center">50,000TSH/month</h1>
                 <h1 className="text-lg text-center">Standard plan</h1>

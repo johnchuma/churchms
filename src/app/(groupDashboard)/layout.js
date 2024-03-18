@@ -12,14 +12,14 @@ const Layout = ({children}) => {
   
     return ( <div>
  <div className="bg-white  min-h-screen overflow-x-hidden relative">
-  {loading&&<div className="w-screen bg-gray-900 bg-opacity-30 min-h-screen flex justify-center items-center fixed">
+  {loading&&<div className="w-screen z-50 bg-gray-900 bg-opacity-30 min-h-screen flex justify-center items-center fixed">
   <div className="h-8 w-8 animate-spin rounded-full border-4 border-solid border-indigo-600 border-t-transparent"></div> 
   </div>}
       <Header/>
       <LoaderContext.Provider value={{loading,setLoading,group,setGroup}}>
-      <div className="grid grid-cols-11 overflow-x-hidden">
+      <div className=" flex overflow-x-hidden">
         <GroupSidebar/>
-        <div className=" bg-white h-screen col-span-9 py-8 px-12">
+        <div className=" bg-white h-screen ml-auto mt-24 w-9/12 py-8 px-12">
               {children}
         </div>
       </div>

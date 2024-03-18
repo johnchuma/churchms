@@ -1,5 +1,5 @@
 const Header = () => {
-    return ( <div className=" w-screen overflow-hidden">
+    return ( <div className=" w-screen z-40 overflow-hidden fixed">
         <div className="bg-slate-900 ">
             <div className="flex justify-end space-x-3 text-base text-white font-bold py-3 px-10 mx-auto">
             <h1>Call for help</h1>
@@ -7,7 +7,7 @@ const Header = () => {
             <h1>help@modernchurch.com</h1>
             </div>
         </div>
-        <div className="px-10 mx-auto flex justify-between  py-4  ">
+        <div className="px-10 mx-auto flex justify-between bg-white  py-4  ">
            <div className="flex space-x-4 items-center ">
            <h1 className="font-bold text-lg text-indigo-600">Modern Church MS</h1>
           <div className="space-x-4 flex">

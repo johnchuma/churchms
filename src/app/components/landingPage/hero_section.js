@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const HeroSection = () => {
     return ( <div className="w-10/12 mx-auto">
-        <div className="grid grid-cols-12 py-16">
-            <div className="col-span-6 space-y-8">
-                <div className="flex flex-row bg-green-50 rounded-full w-6/12 px-4 py-2 items-center space-x-2">
+        <div className="grid grid-cols-12 py-4">
+            <div className="col-span-5 space-y-8">
+                <button className="flex flex-row bg-green-50 rounded-full  px-4 py-2 items-center space-x-2">
                     <div className="bg-green-100 rounded-full aspect-square">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
                      className="w-4 h-4 ">
@@ -14,18 +14,23 @@ const HeroSection = () => {
                     </div>
                     <p>Feel free to explore our Demo system</p>
 
-                </div>
-                <h1 className="font-bold text-6xl w-11/12">
-                    Comprehensive Church Management solution
+                </button>
+                <h1 className="font-bold text-6xl">
+                    Best Church Management solution
                 </h1>
-                <p className="text-lg w-9/12">With our system you can <span className="font-bold text-black">manage everything </span> in your church, from Church members, revenue, church projects and many other church aspects</p>
-               <div className="flex space-x-4 w-7/12">
-               <Link href="/login" className="py-3  w-full rounded-full px-5 bg-indigo-600 font-bold text-center  text-white">Get started</Link>
-               <Link href="/login" className="py-3 w-full rounded-full px-5 text-start  font-bold  text-indigo-600">View services</Link>
+                <p className="text-lg w-12/12">With our system you can <span className="font-bold text-black">manage everything </span> in your church, from Church members, revenue, church projects and many other church aspects</p>
+               <div className="flex space-x-4 ">
+                <button>
+                <Link href="/login" className="py-3  w-full rounded-full px-5 bg-indigo-600 font-bold text-center  text-white">Get started</Link>
+                </button>
+                <button>
+                <Link href="/login" className="py-3 w-full rounded-full px-5 text-start  font-bold  text-indigo-600">View services</Link>
+
+                </button>
                </div>
             </div>
-            <div className="col-span-6 ">
-                <Image width={2000} height={2000} src="/frame.png"/>
+            <div className="col-span-7 ">
+                <Image className=" " width={2000} height={2000} src="/hero.png"/>
             </div>
 
             

@@ -8,11 +8,11 @@ const FeatureSection = () => {
         <div className="w-10/12 mx-auto grid grid-cols-12 py-24">
        
              <div className=" col-span-12 text-center ">
-                  <h1 className="font-bold w-5/12 mx-auto text-4xl  text-white">
+                  <h1 className="font-bold w-7/12 mx-auto text-4xl  text-white">
                         Features available on our Church management system ?
                   </h1>
                  
-                  <div className=" flex-wrap flex mt-8 justify-center w-8/12 mx-auto ">
+                  <div className=" flex-wrap flex mt-8 justify-center w-10/12 mx-auto ">
                   {[
                   {title:"Members management",details:""},
                   {title:"Contributions management",details:""},

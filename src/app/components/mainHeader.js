@@ -1,8 +1,9 @@
 import Link from "next/link";
 
-const mainHeader = () => {
+const MainHeader = () => {
     return ( <div className=" w-screen overflow-hidden">
-        <div className="bg-slate-900 ">
+        <div className="bg-slate-950 ">
+            
             <div className="flex justify-end space-x-3 text-base text-white font-bold py-3 w-10/12 mx-auto">
             <h1>Call for help</h1>
             <h1>+255627707434</h1>
@@ -29,4 +30,4 @@ const mainHeader = () => {
     </div> );
 }
  
-export default mainHeader;
+export default MainHeader;
