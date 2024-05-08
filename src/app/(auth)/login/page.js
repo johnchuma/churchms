@@ -45,7 +45,7 @@ const Page = () => {
                                 }
                             })
                     }} className="w-5/12 mx-auto">
-                        <h1 className="font-bold text-4xl text-center text-slate-950 mb-10">Sign in</h1>
+                        <h1 className="font-medium text-4xl text-center text-slate-950 mb-10">Sign in</h1>
                         <div>
                         <label>Email address</label>
                         <input required name="email" placeholder="Enter email address" className="w-full text-sm mt-2 border-slate-300 rounded"/>
@@ -66,7 +66,7 @@ const Page = () => {
                             </Link>
 
                         </div>
-                        <button type="submit" className="py-3 flex justify-center w-full rounded bg-indigo-600 font-bold mt-5 text-white">
+                        <button type="submit" className="py-3 flex justify-center w-full rounded bg-indigo-600 font-medium mt-5 text-white">
                             {loading?<div className="h-6 w-6 rounded-full border-4 border-l-transparent border-white animate-spin "></div>:"Login"}
                         </button>
                         <p className="text-slate-500 text-start  text-sm mt-4">By signing in, I agree to the Modern Church <Link href={`/privacyStatement`} className="text-indigo-600">Privacy Statement </Link> and <Link href={`/TermsOfService`} className="text-indigo-600">Terms of Service.</Link> </p>

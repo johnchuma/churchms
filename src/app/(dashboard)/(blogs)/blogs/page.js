@@ -32,10 +32,10 @@ const Page = ({params}) => {
      
         <div className="flex justify-between items-start mt-5  ">
             <div className="flex flex-col">
-            <h1 className='text-2xl font-bold text-slate-900'>Blogs</h1>
+            <h1 className='text-2xl font-medium text-slate-900'>Blogs</h1>
             </div>
             <Link href={`/addBlog/${params.uuid}`} className="bg-indigo-600 text-white
-             py-2 px-3 text-base font-bold rounded-lg">Add blog</Link>
+             py-2 px-3 text-base font-medium rounded-lg">Add blog</Link>
         </div>
         
 
@@ -63,7 +63,7 @@ const Page = ({params}) => {
                      <td className="py-2 text-base">{timeAgo(item.createdAt.toDate())}</td>
                      <td className="py-2 text-base">{item.title}</td>
                      <td className="py-2 text-base">{item.description}</td>
-                     <td  className=" text-indigo-600 bg-opacity-20  font-bold">
+                     <td  className=" text-indigo-600 bg-opacity-20  font-medium">
                          <Link href={`/editBlog/${item.id}`}>
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
                           className="w-5 h-5 text-green-600">
@@ -71,7 +71,7 @@ const Page = ({params}) => {
                             </svg>
                          </Link>
                      </td>
-                     <td  className=" text-danger bg-opacity-20 font-bold">
+                     <td  className=" text-danger bg-opacity-20 font-medium">
                          <div className="cursor-pointer" onClick={()=>{
                             deleteBlog(item.id).then((data)=>{
                                  setrefresh(refresh+1)
@@ -102,7 +102,7 @@ const Page = ({params}) => {
                          if(currentPage < totalPages){
                             setcurrentPage(currentPage+1)
                         }
-                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-bold`}>Next</button>
+                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-medium`}>Next</button>
 
                 </div>
 

@@ -8,7 +8,7 @@ const WhySection = () => {
     return ( <div className=" ">
         <div className="w-10/12 mx-auto grid gap-x-10 grid-cols-12 py-24 items-center">
         <div className=" col-span-6 space-y-8 ">
-        <h1 className="font-bold w-12/12 text-4xl  ">
+        <h1 className="font-medium w-12/12 text-4xl  ">
         Why Our System Is Essential for Your Ministry ?
                   </h1>
                   <p className="pe-5 text-lg">
@@ -17,7 +17,7 @@ const WhySection = () => {
                     explore why embracing our solution is pivotal for the success and growth of your congregation.
                   </p>
                   <div className="w-6/12">
-                  <button  className="py-3 w-full  rounded-full px-5 bg-teal-300 font-bold text-center  text-slate-900">View demo</button>
+                  <button  className="py-3 w-full  rounded-full px-5 bg-teal-300 font-medium text-center  text-slate-900">View demo</button>
 
                   </div>
 
@@ -62,7 +62,7 @@ const WhySection = () => {
                 
 
                 ].map((item,index)=>{
-                    return <div className={`font-bold text-center border me-3 mb-3
+                    return <div className={`font-medium text-center border me-3 mb-3
                      border-full flex flex-col text-2xl space-y-2 items-center justify-center border-slate-300
                        rounded-lg py-4 px-7`} key={index}>
                         <div>{item.icon}</div>

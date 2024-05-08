@@ -19,7 +19,10 @@ export default function RootLayout({ children }) {
       </head>
       <body  className={font.className}>
         <Toaster position="top-right"/>
-        {children}</body>
+        <div className="font-aeonik">
+        {children}
+        </div>
+        </body>
 
 
 

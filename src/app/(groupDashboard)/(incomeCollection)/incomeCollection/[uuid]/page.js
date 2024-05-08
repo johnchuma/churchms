@@ -42,10 +42,10 @@ const Page = ({params}) => {
      
         <div className="flex justify-between items-start mt-5  ">
             <div className="flex flex-col">
-            <h1 className='text-2xl font-bold text-slate-900'>{incomeSource&&incomeSource.name}</h1>
+            <h1 className='text-2xl font-medium text-slate-900'>{incomeSource&&incomeSource.name}</h1>
             </div>
             <Link href={`/recordIncome/${params.uuid}`} className="bg-indigo-600 text-white
-             py-2 px-3 text-base font-bold rounded-lg">{incomeSource.allowPledging?"Record pledge":"Record income"}</Link>
+             py-2 px-3 text-base font-medium rounded-lg">{incomeSource.allowPledging?"Record pledge":"Record income"}</Link>
         </div>
         
 
@@ -79,10 +79,10 @@ const Page = ({params}) => {
                      {incomeSource.recordUserInfo == true && <td className="py-2 text-base">{item.name}</td>}
                      {incomeSource.recordUserInfo == true && <td className="py-2 text-base">{item.phone}</td>}
                      {incomeSource.recordUserInfo == true && <td className="py-2 text-base">{item.address}</td>}
-                     {incomeSource.allowPledging == true && <td className="font-bold cursor-pointer text-cyan-500">
+                     {incomeSource.allowPledging == true && <td className="font-medium cursor-pointer text-cyan-500">
                         <Link href={`/pledgePayouts/${item.id}`}>View payouts</Link></td> }
                      
-                     <td  className=" text-indigo-600 bg-opacity-20  font-bold">
+                     <td  className=" text-indigo-600 bg-opacity-20  font-medium">
                          <Link href={`/editIncomeCollections/${item.id}`}>
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
                           className="w-5 h-5 text-green-600">
@@ -90,7 +90,7 @@ const Page = ({params}) => {
                             </svg>
                          </Link>
                      </td>
-                     <td  className=" text-danger bg-opacity-20 font-bold">
+                     <td  className=" text-danger bg-opacity-20 font-medium">
                          <div className="cursor-pointer" onClick={()=>{
                             deleteIncomeCollection(item.id).then((data)=>{
                                  setrefresh(refresh+1)
@@ -121,7 +121,7 @@ const Page = ({params}) => {
                          if(currentPage < totalPages){
                             setcurrentPage(currentPage+1)
                         }
-                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-bold`}>Next</button>
+                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-medium`}>Next</button>
 
                 </div>
 

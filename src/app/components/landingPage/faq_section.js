@@ -5,7 +5,7 @@ const FAQSection = () => {
   const [selectedIndex, setselectedIndex] = useState(null);
     return ( <div>
         <div className="text-center mb-10 ">
-            <h1 className="font-bold w-12/12 text-4xl  me-auto">
+            <h1 className="font-medium w-12/12 text-4xl  me-auto">
              Frequent asked questions
                   </h1>
                   <p className="pe-5 text-lg mt-4 w-6/12 mx-auto">
@@ -60,7 +60,7 @@ const FAQSection = () => {
                         }
                       }} className="flex mb-2 px-4 justify-between cursor-pointer py-3 border border-slate-300 rounded">
                        <div className="flex flex-col items-start justify-start">
-                       <h1 className="font-bold text-xl text-start">{item.title}</h1>
+                       <h1 className="font-medium text-xl text-start">{item.title}</h1>
                         {selectedIndex==index&&<p className="text-lg text-start mt-2">
                           {item.description}
                           </p>}

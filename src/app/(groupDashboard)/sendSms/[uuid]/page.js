@@ -40,7 +40,7 @@ const Page = ({params}) => {
                 setLoading(false)
             })
         }} className="space-y-4 py-3">
-        <h1 className="text-2xl font-bold text-slate-800 mb-4">Send message</h1>
+        <h1 className="text-2xl font-medium text-slate-800 mb-4">Send message</h1>
         <FormGroup label="Select type" 
                 inputField={<select name="type" onChange={(e)=>{
                     setselectedType(e.target.value)

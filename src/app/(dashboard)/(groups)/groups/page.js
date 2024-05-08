@@ -29,11 +29,11 @@ const Page = () => {
      
         <div className="flex justify-between items-center mb-5 ">
             <div className="flex flex-col">
-            <h1 className='text-2xl font-bold text-slate-900'>Groups</h1>
+            <h1 className='text-2xl font-medium text-slate-900'>Groups</h1>
     
             </div>
        
-        <Link href="/addGroup" className="bg-indigo-600 text-white py-2 px-3 text-base font-bold rounded-lg">Add group</Link>
+        <Link href="/addGroup" className="bg-indigo-600 text-white py-2 px-3 text-base font-medium rounded-lg">Add group</Link>
         </div>
 
 
@@ -74,7 +74,7 @@ const Page = () => {
                          if(currentPage < totalPages){
                             setcurrentPage(currentPage+1)
                         }
-                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-bold`}>Next</button>
+                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-medium`}>Next</button>
 
                 </div>
 

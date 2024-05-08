@@ -65,7 +65,7 @@ const Page = () => {
             router.back()
           })
         }}>
-            <h1 className="text-2xl font-bold text-slate-800 mb-4">New sermon</h1>
+            <h1 className="text-2xl font-medium text-slate-800 mb-4">New sermon</h1>
             <div className="grid grid-cols-1 gap-4">
                 <FormGroup label="Sermon type" 
                     inputField={

@@ -51,7 +51,7 @@ const Page = ({params}) => {
             router.push('/login')
           })
         }}>
-            <h1 className="text-3xl text-center font-bold text-slate-800 mb-2">Personal details</h1>
+            <h1 className="text-3xl text-center font-medium text-slate-800 mb-2">Personal details</h1>
             <p className=" opacity-50 text-lg text-center mb-10">Fill the form below to complete registration</p>
             <div className="gap-4 grid grid-cols-2">
                 <VerticalFormGroup  label="Member name" 
@@ -104,7 +104,7 @@ const Page = ({params}) => {
             </select>}/>
             </div>
             <button type="submit"  className="bg-indigo-600 w-full text-base justify-center flex py-3 px-3  mt-8 rounded-lg text-white">
-            {loading?<div className="h-6 font-bold w-6 border-4 border-white border-t-transparent animate-spin rounded-full"></div>
+            {loading?<div className="h-6 font-medium w-6 border-4 border-white border-t-transparent animate-spin rounded-full"></div>
             :"Submit details"}
                
             </button>

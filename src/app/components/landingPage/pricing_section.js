@@ -3,7 +3,7 @@ const PricingSection = () => {
         
         <div className="   py-24 w-10/12 mx-auto  ">
             <div className="text-center mb-10">
-            <h1 className="font-bold w-12/12 mb-3 text-4xl text-white  me-auto">
+            <h1 className="font-medium w-12/12 mb-3 text-4xl text-white  me-auto">
            Our subscriptions plans
                   </h1>
                   <p className="pe-5 text-lg text-white">
@@ -12,10 +12,10 @@ const PricingSection = () => {
             </div>
           <div className="grid grid-cols-3 gap-8 text-lg">
              <div className=" bg-white px-6 py-6 rounded-2xl ">
-                <h1 className="text-2xl font-bold text-center">50,000TSH/month</h1>
+                <h1 className="text-2xl font-medium text-center">50,000TSH/month</h1>
                 <h1 className="text-lg text-center">Standard plan</h1>
                  
-                 <h1 className=" font-bold mb-2">Services</h1>
+                 <h1 className=" font-medium mb-2">Services</h1>
                  {["Members management","Contribution management","Plans and goals management","Media storage","Blog","Church website","Youtube channel","Instagram account","Facebook page"].map((item)=>{
                     return  <div className="flex space-x-2 items-center">
                     <div className="">
@@ -29,13 +29,13 @@ const PricingSection = () => {
                     </div>
                  </div>
                  })}
-                 <button className="py-2 px-4 text-center bg-indigo-600 text-white font-bold w-full rounded-full shadow-lg my-5">Subscribe</button>   
+                 <button className="py-2 px-4 text-center bg-indigo-600 text-white font-medium w-full rounded-full shadow-lg my-5">Subscribe</button>   
              </div>
              <div className=" bg-white px-6 py-6 rounded-2xl ">
-                <h1 className="text-2xl font-bold text-center">85,000TSH/month</h1>
+                <h1 className="text-2xl font-medium text-center">85,000TSH/month</h1>
                 <h1 className="text-lg text-center">Standard plan</h1>
                  
-                 <h1 className=" font-bold mb-2">Services</h1>
+                 <h1 className=" font-medium mb-2">Services</h1>
                  {["Members management","Contribution management","Plans and goals management","Media storage","Blog","Church website","Youtube channel","Instagram account","Facebook page"].map((item)=>{
                     return  <div className="flex space-x-2 items-center">
                     <div className="">
@@ -49,13 +49,13 @@ const PricingSection = () => {
                     </div>
                  </div>
                  })}
-                 <button className="py-2 px-4 text-center bg-indigo-600 text-white font-bold w-full rounded-full shadow-lg my-5">Subscribe</button>   
+                 <button className="py-2 px-4 text-center bg-indigo-600 text-white font-medium w-full rounded-full shadow-lg my-5">Subscribe</button>   
              </div>
              <div className=" bg-white px-6 py-6 rounded-2xl ">
-                <h1 className="text-2xl font-bold text-center">120,000TSH/month</h1>
+                <h1 className="text-2xl font-medium text-center">120,000TSH/month</h1>
                 <h1 className="text-lg text-center">Standard plan</h1>
                  
-                 <h1 className=" font-bold mb-2">Services</h1>
+                 <h1 className=" font-medium mb-2">Services</h1>
                  {["Members management","Contribution management","Plans and goals management","Media storage","Blog","Church website","Youtube channel","Instagram account","Facebook page"].map((item)=>{
                     return  <div className="flex space-x-2 items-center">
                     <div className="">
@@ -69,7 +69,7 @@ const PricingSection = () => {
                     </div>
                  </div>
                  })}
-                 <button className="py-2 px-4 text-center bg-indigo-600 text-white font-bold w-full rounded-full shadow-lg my-5">Subscribe</button>   
+                 <button className="py-2 px-4 text-center bg-indigo-600 text-white font-medium w-full rounded-full shadow-lg my-5">Subscribe</button>   
              </div>
           </div>
         </div>

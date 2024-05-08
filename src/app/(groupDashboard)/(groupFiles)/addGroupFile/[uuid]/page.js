@@ -50,7 +50,7 @@ const Page = ({params}) => {
         
          
         }}>
-            <h1 className="text-2xl font-bold text-slate-800 mb-4">Add file</h1>
+            <h1 className="text-2xl font-medium text-slate-800 mb-4">Add file</h1>
             <div className="grid grid-cols-1 gap-4">
             <FormGroup label="File type" 
                 inputField={<select onChange={(e)=>{

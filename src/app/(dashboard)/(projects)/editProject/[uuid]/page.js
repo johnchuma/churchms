@@ -49,7 +49,7 @@ const Page = ({params}) => {
             router.back()
           })
         }}>
-            <h1 className="text-2xl font-bold text-slate-800 mb-4">New project</h1>
+            <h1 className="text-2xl font-medium text-slate-800 mb-4">New project</h1>
             <div className="grid grid-cols-1 gap-4">
             <FormGroup label="Project title" 
                 inputField={<input defaultValue={project.title} name="title" required className="border text-base w-3/5 py-1  border-slate-300 rounded-lg"

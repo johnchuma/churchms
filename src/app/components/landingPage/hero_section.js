@@ -15,16 +15,16 @@ const HeroSection = () => {
                     <p>Feel free to explore our Demo system</p>
 
                 </button>
-                <h1 className="font-bold text-6xl">
+                <h1 className=" font-medium text-6xl">
                     Best Church Management solution
                 </h1>
-                <p className="text-lg w-12/12">With our system you can <span className="font-bold text-black">manage everything </span> in your church, from Church members, revenue, church projects and many other church aspects</p>
+                <p className="text-lg w-12/12">With our system you can <span className="font-medium text-black">manage everything </span> in your church, from Church members, revenue, church projects and many other church aspects</p>
                <div className="flex space-x-4 ">
                 <button>
-                <Link href="/login" className="py-3  w-full rounded-full px-5 bg-indigo-600 font-bold text-center  text-white">Get started</Link>
+                <Link href="/login" className="py-3  w-full rounded-full px-5 bg-indigo-600 font-medium text-center  text-white">Get started</Link>
                 </button>
                 <button>
-                <Link href="/login" className="py-3 w-full rounded-full px-5 text-start  font-bold  text-indigo-600">View services</Link>
+                <Link href="/login" className="py-3 w-full rounded-full px-5 text-start  font-medium  text-indigo-600">View services</Link>
 
                 </button>
                </div>

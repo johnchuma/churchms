@@ -35,10 +35,10 @@ const Page = ({params}) => {
      
         <div className="flex justify-between items-start mt-5  ">
             <div className="flex flex-col">
-            <h1 className='text-2xl font-bold text-slate-900'>{collection&&collection.name} payouts</h1>
+            <h1 className='text-2xl font-medium text-slate-900'>{collection&&collection.name} payouts</h1>
             </div>
             <Link href={`/addPledgePayout/${params.uuid}`} className="bg-indigo-600 text-white
-             py-2 px-3 text-base font-bold rounded-lg">Record payout</Link>
+             py-2 px-3 text-base font-medium rounded-lg">Record payout</Link>
         </div>
         
         {
@@ -64,7 +64,7 @@ const Page = ({params}) => {
                      <td className="py-2 text-base">{formatDate(item.createdAt)}</td>
                      <td className="py-2 text-base">{item.amount}TSH</td>
                     
-                     <td  className=" text-danger bg-opacity-20 font-bold">
+                     <td  className=" text-danger bg-opacity-20 font-medium">
                          <div className="cursor-pointer" onClick={()=>{
                             editIncomeCollection(collection.id,{payouts:[...collection.payouts.filter((e)=>e.id!=item.id)]}).then((data)=>{
                                  setrefresh(refresh+1)
@@ -95,7 +95,7 @@ const Page = ({params}) => {
                          if(currentPage < totalPages){
                             setcurrentPage(currentPage+1)
                         }
-                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-bold`}>Next</button>
+                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-medium`}>Next</button>
 
                 </div>
 

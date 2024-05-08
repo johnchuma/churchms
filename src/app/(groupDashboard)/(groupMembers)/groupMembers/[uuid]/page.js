@@ -37,7 +37,7 @@ const Page = ({params}) => {
         <div className="flex justify-between items-start mt-5  ">
 
             <div className="flex flex-col">
-            <h1 className='text-2xl font-bold text-slate-900'>Members of {group&&group.name}</h1>
+            <h1 className='text-2xl font-medium text-slate-900'>Members of {group&&group.name}</h1>
             <div className="grid grid-cols-2 gap-8 text-center  mt-5">
             {[`Members`,'Add member'].map((item,key)=>
             <p key={key} onClick={()=>{
@@ -79,7 +79,7 @@ const Page = ({params}) => {
                      <td className="py-2 text-base">{item.gender}</td>
                      <td className="py-2 text-base">{item.address}{item.groups.length}</td>
                      <td className="py-2 text-base">{item.phone}</td>
-                     <td  className=" bg-opacity-20  font-bold">
+                     <td  className=" bg-opacity-20  font-medium">
                       
                      <svg onClick={()=>{
                            setLoading(true)
@@ -101,7 +101,7 @@ const Page = ({params}) => {
 
                  
                   </td>
-                     <td  className=" text-danger bg-opacity-20 font-bold">
+                     <td  className=" text-danger bg-opacity-20 font-medium">
                       
                      </td>
                      </tr>
@@ -128,7 +128,7 @@ const Page = ({params}) => {
                      <td className="py-2 text-base">{item.gender}</td>
                      <td className="py-2 text-base">{item.address}</td>
                      <td className="py-2 text-base">{item.phone}</td>
-                     <td  className=" bg-opacity-20  font-bold">
+                     <td  className=" bg-opacity-20  font-medium">
                       
                          <svg onClick={()=>{
                            setLoading(true)
@@ -148,7 +148,7 @@ const Page = ({params}) => {
 
                     
                      </td>
-                     <td  className=" text-danger bg-opacity-20 font-bold">
+                     <td  className=" text-danger bg-opacity-20 font-medium">
                        
                      </td>
                      </tr>
@@ -169,7 +169,7 @@ const Page = ({params}) => {
                          if(currentPage < totalPages){
                             setcurrentPage(currentPage+1)
                         }
-                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-bold`}>Next</button>
+                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-medium`}>Next</button>
 
                 </div>
 

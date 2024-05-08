@@ -18,7 +18,7 @@ const Sidebar = () => {
             {title:"Daily scriptures",href:"/scriptures"},
             {title:"Sermons",href:"/sermons"}, 
          ].map((item)=>{
-            return <Link className={`${path.includes(item.href)?"bg-indigo-600 text-white py-2 ":"bg-transparent  hover:font-bold transition-all duration-100"} pl-10`} href={item.href}>{item.title}</Link>
+            return <Link className={`${path.includes(item.href)?"bg-indigo-600 text-white py-2 ":"bg-transparent  hover:font-medium transition-all duration-100"} pl-10`} href={item.href}>{item.title}</Link>
           })}
         </div>
         <h1 className="text-base px-6 mt-5">ORDERS</h1>
@@ -29,7 +29,7 @@ const Sidebar = () => {
             {title:"Instruments",href:"/grou"},
             {title:"Decorations",href:"null"}
          ].map((item)=>{
-            return <Link className={`${path == item.href?"bg-indigo-600 hover:font-bold text-white py-2 ":"bg-transparent hover:font-bold transition-all duration-100"} pl-10`} href={item.href}>{item.title}</Link>
+            return <Link className={`${path == item.href?"bg-indigo-600 hover:font-medium text-white py-2 ":"bg-transparent hover:font-medium transition-all duration-100"} pl-10`} href={item.href}>{item.title}</Link>
           })}
         </div>
         <h1 className="text-base px-6 mt-5">SOCIAL</h1>
@@ -41,7 +41,7 @@ const Sidebar = () => {
             {title:"Instagram",href:"null"},
            
          ].map((item)=>{
-            return <Link className={`${path == item.href?"bg-indigo-600 text-white py-2 ":"bg-transparent hover:font-bold transition-all duration-100"} pl-10`} href={item.href}>{item.title}</Link>
+            return <Link className={`${path == item.href?"bg-indigo-600 text-white py-2 ":"bg-transparent hover:font-medium transition-all duration-100"} pl-10`} href={item.href}>{item.title}</Link>
           })}
         </div>
         

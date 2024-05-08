@@ -73,7 +73,7 @@ const Page = () => {
 
                     }}>
                     <div className="w-6/12 mx-auto">
-                        <h1 className="font-bold text-4xl text-center text-slate-950 mb-10">Create an account</h1>
+                        <h1 className="font-medium text-4xl text-center text-slate-950 mb-10">Create an account</h1>
                         
                         <div>
                         <label>Church name</label>
@@ -101,7 +101,7 @@ const Page = () => {
                         <label>Re-write password</label>
                         <input required type="password" name="repeatPassword" placeholder="Re-write password" className="w-full text-sm mt-2 border-slate-300 rounded"/>
                         </div>
-                        <button type="submit" className="py-3 flex justify-center w-full rounded bg-indigo-600 font-bold mt-5 text-white">
+                        <button type="submit" className="py-3 flex justify-center w-full rounded bg-indigo-600 font-medium mt-5 text-white">
                             {loading?<div className="h-6 w-6 border-4 border-white border-t-transparent animate-spin rounded-full"></div>:"Register"}
                             
                             </button>

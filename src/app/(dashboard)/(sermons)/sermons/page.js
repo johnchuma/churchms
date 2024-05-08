@@ -29,7 +29,7 @@ const Page = () => {
      
         <div className="flex justify-between items-start  ">
             <div className="flex flex-col">
-            <h1 className='text-2xl font-bold text-slate-900'>Sermons</h1>
+            <h1 className='text-2xl font-medium text-slate-900'>Sermons</h1>
             <div className="grid grid-cols-4 text-center  mt-5">
             {[`Online texts`,'Video','Audio','Documents'].map((item,key)=>
             <p key={key} onClick={()=>{
@@ -40,7 +40,7 @@ const Page = () => {
            </div>
             </div>
        
-        <Link href="/addSermon" className="bg-indigo-600 text-white py-2 px-3 text-base font-bold rounded-lg">Add sermon</Link>
+        <Link href="/addSermon" className="bg-indigo-600 text-white py-2 px-3 text-base font-medium rounded-lg">Add sermon</Link>
         </div>
         <div className="border-b border-slate-300 w-full mb-5"></div>
 
@@ -70,7 +70,7 @@ const Page = () => {
                      <td className="py-2 text-base">{item.title}</td>
                      <td className="py-2 text-base">{item.scriptures}</td>
                      <td className="py-2 text-base">{item.introduction}</td>
-                     <td  className=" text-indigo-600 bg-opacity-20  font-bold">
+                     <td  className=" text-indigo-600 bg-opacity-20  font-medium">
                          <Link href={`/editSermon/${item.id}`}>
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
                           className="w-5 h-5 text-green-600">
@@ -78,7 +78,7 @@ const Page = () => {
                             </svg>
                          </Link>
                      </td>
-                     <td  className=" text-danger bg-opacity-20 font-bold">
+                     <td  className=" text-danger bg-opacity-20 font-medium">
                          <div className="cursor-pointer" onClick={()=>{
                             deleteSermon(item.id).then((data)=>{
                                  setrefresh(refresh+1)
@@ -107,7 +107,7 @@ const Page = () => {
                          if(currentPage < totalPages){
                             setcurrentPage(currentPage+1)
                         }
-                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-bold`}>Next</button>
+                    }} className={` py-1 px-2 rounded bg-opacity-90 text-indigo-600 font-medium`}>Next</button>
 
                 </div>
 

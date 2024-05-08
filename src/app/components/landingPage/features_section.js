@@ -8,7 +8,7 @@ const FeatureSection = () => {
         <div className="w-10/12 mx-auto grid grid-cols-12 py-24">
        
              <div className=" col-span-12 text-center ">
-                  <h1 className="font-bold w-7/12 mx-auto text-4xl  text-white">
+                  <h1 className="font-medium w-7/12 mx-auto text-4xl  text-white">
                         Features available on our Church management system ?
                   </h1>
                  

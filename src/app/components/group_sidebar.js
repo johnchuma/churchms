@@ -19,7 +19,7 @@ const GroupSidebar = () => {
             {title:"Calenders",href:`/groupCalender`},
             {title:"Files",href:`/groupFiles`}, 
          ].map((item)=>{
-            return <Link className={`${path.includes(item.href)?"bg-indigo-600 text-white py-2 ":"bg-transparent hover:font-bold transition-all duration-100"} pl-10`} href={item.href+`/${group&&group.id}`}>{item.title}</Link>
+            return <Link className={`${path.includes(item.href)?"bg-indigo-600 text-white py-2 ":"bg-transparent hover:font-medium transition-all duration-100"} pl-10`} href={item.href+`/${group&&group.id}`}>{item.title}</Link>
           })}
         </div>
         <h1 className="text-base px-6 mt-5">COMMUNICATION</h1>
@@ -29,7 +29,7 @@ const GroupSidebar = () => {
             {title:"Email",href:`/sendEmail`},
          
          ].map((item)=>{
-            return <Link className={`${path.includes(item.href)?"bg-indigo-600 text-white py-2 ":"bg-transparent hover:font-bold transition-all duration-100"} pl-10`} href={item.href+`/${group&&group.id}`}>{item.title}</Link>
+            return <Link className={`${path.includes(item.href)?"bg-indigo-600 text-white py-2 ":"bg-transparent hover:font-medium transition-all duration-100"} pl-10`} href={item.href+`/${group&&group.id}`}>{item.title}</Link>
           })}
         </div>
         
